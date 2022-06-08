@@ -5,10 +5,10 @@
 <body>
 
 	<% 
-	request.setHeader("Cache-Control", "no-cache");
-	request.addHeader("Cache-Control", "no-store");
-	request.setHeader("Pragma", "No-cache");
-	request.setHeader("Expires", 1L);
+	response.setHeader("Cache-Control", "no-cache");
+	response.addHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "No-cache");
+	response.setDateHeader("Expires", 1L);
 	%>
 
 <%
@@ -21,8 +21,18 @@
 <%
 	}
 %>
+<br>
+<%
+	Enumeration headerEnum1 = (Enumeration)response.getHeaderNames();
+	while(headerEnum1.hasMoreElements()) {
+		String headerName1 = (String)headerEnum1.nextElement();
+		String headerValue1 = response.getHeader(headerName1);
+%>
+<%= headerName1 %> = <%= headerValue1 %> <br>
+<%
+	}
+%>
 
-<% response.sendRedirect("https://naver.com")%>
 
 
 </body>

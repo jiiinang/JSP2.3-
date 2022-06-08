@@ -10,6 +10,6 @@
 <body>
 
 
-	<%= "쿠키이름 :" +  cookie.getName() + "쿠키값 : " + cookie.getValue() %>
+	<%= "쿠키이름 : " +  cookie.getName() + "쿠키값 : " + cookie.getValue() %>
 </body>
 </html>
